@@ -1,0 +1,37 @@
+
+<?php
+
+$values =  get_post_custom_values("comment"); 
+if($values)
+{
+?>
+	<div class='header-comment'>
+		 	<div class='row' >
+<?php	
+	$counter = 0;
+	foreach( $values as $key => $value ) {
+	   $comment = $value;
+		$counter = $counter + 1;
+		if($comment && $counter < 3)
+		{
+?>			
+		<div class='col-md-4'>
+	                  
+                
+		<div class="block-testimonial-2">
+                    <div class="__content text-center">
+                      <p class="font-serif-italic">I had a few questions but OSThemes got back to me promptly with the answers. I love the clean design and intelligent user interface. So far bug free and working great.</p><i class="fa fa-quote-right"></i>
+                      
+                      <div data-rating='5' class="star-ratings"><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span><span>&#9733;</span></div>
+                    </div>
+                  </div>               
+		</div>
+<?php	
+		}	
+	}
+?>	
+			</div>
+		</div>
+<?php
+}
+?>

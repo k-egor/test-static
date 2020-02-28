@@ -1,0 +1,33 @@
+
+<?php
+
+$values =  get_post_custom_values("comment"); 
+if($values)
+{
+?>
+	<div class='header-comment'>
+		 	<div class='row' >
+<?php	
+	$counter = 0;
+	foreach( $values as $key => $value ) {
+	   $comment = $value;
+		$counter = $counter + 1;
+		if($comment && $counter < 3)
+		{
+?>			
+		<div class='col-md-4'>
+		<div class="messagefull info">
+                  <div class="__icon hidden-xs"><i class="icon-info"></i></div>
+                  <h6>INFO MESSAGE!</h6>
+                  <p class="mb-0"><?php echo $comment; ?></p>
+                </div>
+		</div>
+<?php	
+		}	
+	}
+?>	
+			</div>
+		</div>
+<?php
+}
+?>
